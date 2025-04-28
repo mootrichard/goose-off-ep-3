@@ -1,0 +1,127 @@
+/* Anti-pattern: Using Comic Sans and random fonts */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+/* Anti-pattern: Extremely bright, clashing colors */
+:root {
+    --primary-color: #ff00ff;
+    --secondary-color: #00ff00;
+    --text-color: #ffff00;
+    --background: #000080;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: var(--background);
+    color: var(--text-color);
+    cursor: wait; /* Anti-pattern: Always showing wait cursor */
+    margin: 0;
+    padding: 0;
+}
+
+/* Anti-pattern: Full-screen splash that requires interaction */
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Anti-pattern: Button that's hard to click */
+#enter-button {
+    padding: 20px;
+    background: var(--primary-color);
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    animation: moveButton 2s infinite;
+}
+
+@keyframes moveButton {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-50px, 20px); }
+    50% { transform: translate(50px, -20px); }
+    75% { transform: translate(-20px, -50px); }
+}
+
+/* Anti-pattern: Navigation links that run away from cursor */
+.moving-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.moving-link:hover {
+    transform: translateY(-100px);
+}
+
+/* Anti-pattern: Text that's hard to read */
+.blog-post {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    /* Anti-pattern: Text that leaves trails */
+    text-shadow: 2px 2px 4px var(--text-color);
+}
+
+/* Anti-pattern: Content that rotates while reading */
+.rotating-post {
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Anti-pattern: Cookie notice that's impossible to dismiss */
+#cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Anti-pattern: Newsletter popup that grows when trying to close */
+#newsletter-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
+    padding: 20px;
+    z-index: 100;
+}
+
+#newsletter-popup:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Anti-pattern: Scroll behavior that fights the user */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+/* Anti-pattern: Text selection color that makes text invisible */
+::selection {
+    background-color: var(--text-color);
+    color: var(--text-color);
+}

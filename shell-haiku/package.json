@@ -1,0 +1,21 @@
+{
+  "name": "shell-haiku",
+  "version": "1.0.0",
+  "description": "A CLI tool that explains shell commands and generates haikus",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "shell-haiku": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cli", "shell", "haiku", "explanation"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^5.3.0",
+    "boxen": "^7.1.1"
+  }
+}

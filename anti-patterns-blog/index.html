@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Worst Blog Ever</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Anti-pattern: Forcing users to click through a pointless splash screen -->
+    <div id="splash-screen" class="fullscreen">
+        <h1>Welcome to Blog™</h1>
+        <button onclick="enterSite()" id="enter-button">ENTER SITE</button>
+        <p class="splash-note">* By clicking ENTER you agree to share your entire browsing history</p>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <!-- Anti-pattern: Navigation that moves away from the cursor -->
+        <nav id="evasive-nav">
+            <ul>
+                <li><a href="#" class="moving-link">Home</a></li>
+                <li><a href="#" class="moving-link">About</a></li>
+                <li><a href="#" class="moving-link">Blog</a></li>
+                <li><a href="#" class="moving-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Anti-pattern: Blog posts that disappear while reading -->
+        <div class="blog-container">
+            <article class="blog-post vanishing-post">
+                <h2>Why UX Doesn't Matter</h2>
+                <div class="reading-timer">Time left to read: <span>10</span>s</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+            </article>
+
+            <!-- Anti-pattern: Random rotation of content -->
+            <article class="blog-post rotating-post">
+                <h2>Design Principles I Ignore</h2>
+                <p>This post randomly rotates while you try to read it, because why not?</p>
+            </article>
+
+            <!-- Anti-pattern: Extremely slow reveal -->
+            <article class="blog-post letter-by-letter">
+                <h2>Loading Content Letter By Letter</h2>
+                <p>This text appears one character at a time, testing your patience...</p>
+            </article>
+        </div>
+
+        <!-- Anti-pattern: Newsletter popup that gets bigger when trying to close -->
+        <div id="newsletter-popup" class="hidden">
+            <h3>SUBSCRIBE!!!</h3>
+            <p>Enter your email to receive our newsletter every 5 minutes!</p>
+            <input type="email" placeholder="Your email here...">
+            <button id="subscribe-btn">Subscribe</button>
+            <button id="close-popup" class="close-btn">×</button>
+        </div>
+
+        <!-- Anti-pattern: Cookie notice that follows scroll -->
+        <div id="cookie-notice">
+            <p>This site uses cookies. Like, way too many cookies. We're basically a cookie factory.</p>
+            <button id="accept-cookies">Accept</button>
+            <button id="reject-cookies">Reject (not really)</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

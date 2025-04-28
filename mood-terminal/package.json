@@ -1,0 +1,27 @@
+{
+  "name": "mood-terminal",
+  "version": "1.0.0",
+  "description": "A CLI tool that customizes your terminal based on your mood",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "mood-terminal": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "cli",
+    "mood",
+    "terminal",
+    "customization"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.12"
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Galaga</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            font-family: 'Courier New', monospace;
+        }
+        canvas {
+            border: 2px solid #333;
+            box-shadow: 0 0 20px #0066ff;
+        }
+        #game-container {
+            position: relative;
+        }
+        .game-info {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            text-shadow: 0 0 5px #0066ff;
+        }
+        #score {
+            top: 10px;
+            left: 10px;
+        }
+        #level {
+            top: 10px;
+            right: 10px;
+        }
+        #health {
+            bottom: 10px;
+            left: 10px;
+        }
+        #active-powers {
+            top: 40px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .power-up-indicator {
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #0066ff;
+        }
+        #game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0000;
+            font-size: 48px;
+            text-align: center;
+            text-shadow: 0 0 10px #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="score" class="game-info">Score: <span id="score-value">0</span></div>
+        <div id="level" class="game-info">Level: <span id="level-value">1</span></div>
+        <div id="health" class="game-info">Health: <span id="health-value">100</span></div>
+        <div id="active-powers" class="game-info"></div>
+        <div id="game-over">GAME OVER<br><span style="font-size: 24px">Press SPACE to restart</span></div>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
